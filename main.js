@@ -27,10 +27,10 @@ const horoscope = {
       case 'sign':
         nextStep.push(`If your sign is: "${horoscope[item][id]}".`)
         break
-      case 'level':
+      case 'luckyItem':
         nextStep.push(`Your lucky item should be: "${horoscope[item][id]}".`)
         break
-      case 'tip':
+      case 'advice':
         nextStep.push(`Your advice: "${horoscope[item][id]}".`)
         break
       default:
