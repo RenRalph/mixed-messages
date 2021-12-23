@@ -25,13 +25,13 @@ const horoscope = {
     // use the object's properties to customize the message being added to collectiveAdvice 
     switch(item) {
       case 'sign':
-        nextStep.push(`If your sign is: "${horoscope[item][id]}".`)
+        prediction.push(`If your sign is: "${horoscope[item][id]}".`)
         break
       case 'luckyItem':
-        nextStep.push(`Your lucky item should be: "${horoscope[item][id]}".`)
+        prediction.push(`Your lucky item should be: "${horoscope[item][id]}".`)
         break
       case 'advice':
-        nextStep.push(`Your advice: "${horoscope[item][id]}".`)
+        prediction.push(`Your advice: "${horoscope[item][id]}".`)
         break
       default:
         prediction.push('There is not enough info.')
