@@ -6,38 +6,41 @@ function randomNum (num){
 }
 
 // object of arrays to keep messages
-const collectiveAdvice = {
-    programLanguage: ['javascript', 'ruby', 'java', 'kotlin', 'php', 'go', 'c#'],
-    level: ['Newbie', 'Intermidiate', 'Senior', 'Master', 'Gran Master'],
-    tip: ['improve and improve', 'you should practice more', 'relax and learn']
+const horoscope = {
+    sign: ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'],
+    luckyItem: ['A key', 'The number 7', 'Dice', 'A ladybird', 'Gemstones', 'An eye pendant', 'A pyramid', 'A horseshoe', 'A rabbits foot', 'A four-leaf clover', 'A cricket', 'A dreamcatcher'],
+    advice: ["Don’t forget to look after your own well-being in your quest for success", "When you’re having a tough time just remember how strong you really are", "Remember that people care about you more than you think",
+            "Never stop being yourself no matter what people say", "You’ve got a generous soul but be careful about those with bad intentions", "Don’t be so hard on yourself. You’ve got this", 
+            "Your advice helps people more than you realize – keep spreading it", "Drop your guard from time to time and show people your true self", "Don’t worry so much about people judging you",
+            "Don’t listen to the haters – it comes from a place of envy", "Think for yourself but don’t overthink things", "Don’t allow doubters and naysayers to stop you from going after what you really want"]
   }
   
   // array with full message
-  let nextStep = []
+  let prediction = []
   
   // Iterate over the object considering the array length
-  for(let item in collectiveAdvice) {
-    let optionIdx = randomNum(collectiveAdvice[item].length)
+  for(let item in horoscope) {
+    let id = randomNum(horoscope[item].length)
   
     // use the object's properties to customize the message being added to collectiveAdvice 
     switch(item) {
-      case 'programLanguage':
-        nextStep.push(`Your skill path right now is a "${collectiveAdvice[item][optionIdx]}".`)
+      case 'sign':
+        nextStep.push(`If your sign is: "${horoscope[item][id]}".`)
         break
       case 'level':
-        nextStep.push(`Your next target should be: "${collectiveAdvice[item][optionIdx]}".`)
+        nextStep.push(`Your lucky item should be: "${horoscope[item][id]}".`)
         break
       case 'tip':
-        nextStep.push(`You should: "${collectiveAdvice[item][optionIdx]}".`)
+        nextStep.push(`Your advice: "${horoscope[item][id]}".`)
         break
       default:
-        nextStep.push('There is not enough info.')
+        prediction.push('There is not enough info.')
     }
   }
   
   function formatWisdom(wisdom) {
-    const formatted = nextStep.join('\n')
+    const formatted = prediction.join('\n')
     console.log(formatted)
   }
   
-  formatWisdom(nextStep);
+  formatWisdom(prediction);
